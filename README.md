@@ -1,2 +1,2 @@
-# simple-http-server
-Simple HTTP Server with LDAP authentication and JWT Token
+# ldap-jwt-go
+Simple authentication server for LDAP and JWT Token
