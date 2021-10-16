@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+  ldap-jwt-go:
+    image: michibiki.io/ldap-jwt-go:latest
+    container_name: ldap-jwt-go
+    depends_on:
+      - redis
+    hostname: ldap-jwt-go 
+    environment:
+      - LDAP_PROTOCOL=LDAP
+      - LDAP_HOST=localhost
+      - LDAP_PORT=389
+      - LDAP_SKIPVERIFY=true
+      - LDAP_BIND_DN=cn=readonly,dc=example,dc=com
+      - LDAP_BIND_PASSWORD=readonly
+      - LDAP_BASE_DN=dc=example,dc=com
+      - LDAP_FILTER_USER=(&(objectClass=posixAccount)(uid=%s))
+      - LDAP_FILTER_GROUP=(&(objectClass=groupOfNames)(member=%s))
+      - REDIS_HOST=redis:6379
+      - ACCESS_TOKEN_EXPIRE=15
+      - REFRESH_TOKEN_EXIPIRE=10080
+    ports:
+      - "3998:80"
+    networks:
+      - internal
+      
+  redis:
+    image: redis:alpine
+    container_name: redis
+    hostname: redis
+    restart: always
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - /redis_data:/data
+    networks:
+      - internal
+
+networks:
+  internal:
