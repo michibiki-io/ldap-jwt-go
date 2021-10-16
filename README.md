@@ -35,7 +35,7 @@ docker build --target=development -t michibiki.io/ldap-jwt-go-dev:latest ./
 |LDAP_PROTOCOL||LDAP|LDAP, LDAPS, START_TLS are supported|
 |LDAP_HOST||localhost|LDAP server hostname or ipaddress|
 |LDAP_PORT||389|LDAP server listen port|
-|LDAP_SKIPVERIFY||false|Whether to check for SSL certificates|
+|LDAP_SKIPVERIFY||false|Whether to check for SSL certificate is valid or not|
 |LDAP_BIND_DN|v||Bind UserDN|
 |LDAP_BIND_PASSWORD|v||Bind Password|
 |LDAP_BASE_DN|v||search base for user and group|
