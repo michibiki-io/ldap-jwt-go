@@ -13,3 +13,12 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# debug file
+__debug_bin
+
+# key files
+/private/**
+
+# go tmp
+go.sum
