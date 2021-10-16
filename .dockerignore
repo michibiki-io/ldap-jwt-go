@@ -1,0 +1,7 @@
+CODEOWNERS
+**/.**
+Dockerfile
+Dockerfile.dev
+go.sum
+./private
+docker-compose.yml
