@@ -1,4 +1,5 @@
 # ldap-jwt-go
+
 Lightweight Go(golang) based Web service that provides user authentication against LDAP server (I tested only against [OpenLDAP](https://www.openldap.org/) server, but I think you can also use Active Directory) credentials and returns a JSON Web Token.
 
 I was inspired by lucianweber's [ldap-jwt](https://github.com/lucianweber/ldap-jwt) to create this.
